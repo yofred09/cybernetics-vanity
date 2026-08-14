@@ -65,6 +65,8 @@ Local development builds are written to `build/libs/`. Java 21 is required. Do n
 
 Report reproducible problems through [GitHub Issues](https://github.com/yofred09/cybernetics-vanity/issues). Include the Minecraft, NeoForge, Cybernetics, CPM, and Pehkui versions involved, plus whether the problem occurs in first person, third person, or a projection.
 
+Join the [official Discord community](https://discord.gg/R5VnN7Rn5H) for help, discussion, previews and development updates.
+
 ## Credits
 
 - [Cybernetics](https://www.curseforge.com/minecraft/mc-mods/cybernetics) by Perigrine33 — required parent mod and cyberware framework.
