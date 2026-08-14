@@ -28,12 +28,12 @@ GitHub is used for source code, documentation, and issue tracking only. Compiled
 
 ## Compatibility
 
-- **Custom Player Models:** avoids duplicate skin passes and flickering on custom models.
-- **Pehkui:** preserves player scale in Holoprojector projections and Sandevistan mirages.
+- **[Customizable Player Models (CPM)](https://www.curseforge.com/minecraft/mc-mods/custom-player-models):** avoids duplicate skin passes and flickering on custom models.
+- **[Pehkui](https://www.curseforge.com/minecraft/mc-mods/pehkui):** preserves player scale in Holoprojector projections and Sandevistan mirages.
 - **Sandevistan + CPM:** mirages use the player's CPM model with adaptive render density to protect FPS; this can be disabled in the client settings.
-- **Cyber Spells:** vanity controls compatible rune overlays.
-- **Corpse:** optional appearance-preservation rule.
-- **Create:** optional. Cybernetics itself remains required.
+- **[Cyber Spells](https://www.curseforge.com/minecraft/mc-mods/cyber-spells):** vanity controls compatible rune overlays.
+- **[Corpse](https://www.curseforge.com/minecraft/mc-mods/corpse):** optional appearance-preservation rule.
+- **[Create](https://www.curseforge.com/minecraft/mc-mods/create):** optional. [Cybernetics](https://www.curseforge.com/minecraft/mc-mods/cybernetics) itself remains required.
 
 All optional integrations are soft dependencies: the addon continues to load when they are absent.
 
@@ -41,7 +41,7 @@ All optional integrations are soft dependencies: the addon continues to load whe
 
 - Minecraft 1.21.1
 - NeoForge 21.1.244 or newer
-- Cybernetics 0.5.1 or newer for the current development branch
+- [Cybernetics](https://www.curseforge.com/minecraft/mc-mods/cybernetics) 0.5.1 or newer for the current development branch
 
 ## Getting started
 
@@ -67,7 +67,7 @@ Report reproducible problems through [GitHub Issues](https://github.com/yofred09
 
 ## Credits
 
-- Cybernetics by Perigrine33 — required parent mod and cyberware framework.
+- [Cybernetics](https://www.curseforge.com/minecraft/mc-mods/cybernetics) by Perigrine33 — required parent mod and cyberware framework.
 - Cybernetics: Vanity by Yo_Fred.
 - Original addon idea by OkarinY.
 

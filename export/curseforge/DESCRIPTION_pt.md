@@ -2,7 +2,14 @@
 
 Escolhe a aparência do teu chrome sem desinstalar implantes nem perder os seus efeitos.
 
-Cybernetics: Vanity é um addon cosmético e de compatibilidade para **Cybernetics** no NeoForge 1.21.1. Instala o Vanity Implant e abre um menu sincronizado inspirado no Robosurgeon para ocultar ou mostrar individualmente os visuais de cyberware instalados.
+Cybernetics: Vanity é um addon cosmético e de compatibilidade para **[Cybernetics](https://www.curseforge.com/minecraft/mc-mods/cybernetics)** no [NeoForge](https://neoforged.net/) 1.21.1. Instala o Vanity Implant e abre um menu sincronizado inspirado no Robosurgeon para ocultar ou mostrar individualmente os visuais de cyberware instalados.
+
+## Downloads oficiais
+
+- [Descarregar no CurseForge](https://www.curseforge.com/minecraft/mc-mods/cybernetics-vanity)
+- [Descarregar no Modrinth](https://modrinth.com/mod/cybernetics-vanity)
+
+Estas são as únicas plataformas oficiais de download. O GitHub contém o código-fonte e a documentação, mas não fornece builds compiladas.
 
 ## Funcionalidades principais
 
@@ -17,11 +24,11 @@ Cybernetics: Vanity é um addon cosmético e de compatibilidade para **Cyberneti
 
 ## Compatibilidade
 
-- **CPM:** evita passes duplicados e partes a piscar; suporta modelos CPM no rasto do Sandevistan
-- **Pehkui:** preserva a escala no Sandevistan e nas projeções do Holoprojector
-- **Cyber Spells:** controla overlays compatíveis de runas
-- **Corpse:** preservação opcional da aparência dos cadáveres
-- **Create, Cyberchems, CPM, Pehkui, Cyber Spells e Corpse são opcionais**
+- **[Customizable Player Models (CPM)](https://www.curseforge.com/minecraft/mc-mods/custom-player-models):** evita passes duplicados e partes a piscar; suporta modelos CPM no rasto do Sandevistan
+- **[Pehkui](https://www.curseforge.com/minecraft/mc-mods/pehkui):** preserva a escala no Sandevistan e nas projeções do Holoprojector
+- **[Cyber Spells](https://www.curseforge.com/minecraft/mc-mods/cyber-spells):** controla overlays compatíveis de runas
+- **[Corpse](https://www.curseforge.com/minecraft/mc-mods/corpse):** preservação opcional da aparência dos cadáveres
+- **[Create](https://www.curseforge.com/minecraft/mc-mods/create), [Cyberchems](https://www.curseforge.com/minecraft/mc-mods/cybernetics-cyberchems), CPM, Pehkui, Cyber Spells e Corpse são opcionais**
 
 O Sandevistan adapta automaticamente a quantidade de cópias CPM completas para proteger o FPS. Esta função também pode ser totalmente desativada na configuração do cliente sem perder a escala Pehkui.
 
@@ -29,7 +36,7 @@ O Sandevistan adapta automaticamente a quantidade de cópias CPM completas para 
 
 - Minecraft 1.21.1
 - NeoForge
-- Cybernetics
+- [Cybernetics](https://www.curseforge.com/minecraft/mc-mods/cybernetics)
 
 O addon deve estar instalado no servidor e nos clientes que se ligam a ele.
 
@@ -40,10 +47,10 @@ O addon deve estar instalado no servidor e nos clientes que se ligam a ele.
 3. Define a tecla **Open Cyber Vanity Menu** nos Controlos.
 4. Escolhe os visuais que queres manter.
 
-A wiki no GitHub contém instalação, configuração, compatibilidade e resolução de problemas.
+A **[wiki no GitHub](https://github.com/yofred09/cybernetics-vanity/wiki)** contém instalação, configuração, compatibilidade e resolução de problemas. Os problemas podem ser reportados no **[GitHub Issues](https://github.com/yofred09/cybernetics-vanity/issues)**.
 
 ## Créditos
 
-- Cybernetics por Perigrine33
+- [Cybernetics](https://www.curseforge.com/minecraft/mc-mods/cybernetics) por Perigrine33
 - Cybernetics: Vanity por Yo_Fred
 - Ideia original do addon por OkarinY
