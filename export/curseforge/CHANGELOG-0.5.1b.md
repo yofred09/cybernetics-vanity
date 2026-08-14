@@ -1,0 +1,12 @@
+What's new
+- Added support for Create-Cybernetics 0.5.1 HOTFIX on NeoForge 1.21.1
+- Updated the minimum required NeoForge version to 21.1.244
+- Reworked the Vanity Implant into a Synthskin variant that replaces the existing Synthskin when installed
+- Added an in-game settings screen accessible from the NeoForge Mods menu
+- Added synchronized server options to preserve player appearances on Corpse mod corpses and control missing-limb rendering
+- Added CPM model support for Create-Cybernetics Sandevistan mirage trails
+- Added Pehkui scale support for Sandevistan mirages and Holoprojector player projections
+- Fixed Sandevistan mirages ignoring the size of scaled CPM player models
+- Fixed CPM model parts flickering when Cybernetics skin overlays rendered duplicate geometry
+- Added optional Corpse compatibility to prevent cyberware mutilation and skeleton overlays from replacing preserved player appearances
+- Improved CPM compatibility, model rendering and safe fallback handling

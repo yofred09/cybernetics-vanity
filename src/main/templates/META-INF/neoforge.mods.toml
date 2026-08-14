@@ -1,0 +1,106 @@
+# Cybernetics Vanity - companion mod for Create-Cybernetics
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="Yo_Fred"
+credits="Original mod idea by OkarinY"
+description='''
+Cosmetic control and compatibility addon for Cybernetics. Install the Synthskin-based Vanity Implant,
+then hide or show each cyberware visual without losing its effects. Includes synchronized multiplayer
+settings and optional CPM, Pehkui, Corpse, and Cyber Spells compatibility.
+'''
+
+[[mixins]]
+config="${mod_id}.mixins.json"
+
+[[mixins]]
+config="${mod_id}-cyberspells.mixins.json"
+
+[[mixins]]
+config="${mod_id}-corpse.mixins.json"
+
+[[mixins]]
+config="${mod_id}-pehkui.mixins.json"
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="[${neo_version},)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="createcybernetics"
+    type="required"
+    versionRange="[0.5.1,)"
+    ordering="AFTER"
+    side="BOTH"
+    reason="Provides the cyberware skin overlay / limb-hiding systems and surgery install API."
+
+[[dependencies.${mod_id}]]
+    modId="create"
+    type="optional"
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+    reason="Optional ecosystem integration. Cybernetics Vanity itself only requires Create-Cybernetics."
+
+[[dependencies.${mod_id}]]
+    modId="cyberchems"
+    type="optional"
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+    reason="Optional Cybernetics addon; not required for vanity."
+
+[[dependencies.${mod_id}]]
+    modId="cpm"
+    type="optional"
+    versionRange="[0,)"
+    ordering="NONE"
+    side="CLIENT"
+    reason="Soft Custom Player Models compat (mod id cpm). Prevents limb-geometry conflicts and duplicate skin-overlay passes on custom models."
+
+[[dependencies.${mod_id}]]
+    modId="customplayermodels"
+    type="optional"
+    versionRange="[0,)"
+    ordering="NONE"
+    side="CLIENT"
+    reason="Legacy/alternate CPM mod id (customplayermodels). Optional soft compat only."
+
+[[dependencies.${mod_id}]]
+    modId="cyberspells"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+    reason="Soft Cyber Spells compat — hide rune limb overlays via optional mixins. Never required."
+
+[[dependencies.${mod_id}]]
+    modId="corpse"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="CLIENT"
+    reason="Optional CPM corpse appearance preservation."
+
+[[dependencies.${mod_id}]]
+    modId="pehkui"
+    type="optional"
+    versionRange="[3.8.3,)"
+    ordering="AFTER"
+    side="CLIENT"
+    reason="Optional Pehkui scale compatibility for Holoprojector and Sandevistan player projections."

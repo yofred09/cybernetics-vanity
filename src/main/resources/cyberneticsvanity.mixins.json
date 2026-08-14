@@ -1,0 +1,26 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.cyberneticsvanity.yofred.dev.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "SkinLayerHandlerMixin",
+    "SkinHighlightLayerMixin",
+    "CyberwareLimbHiderMixin",
+    "FirstPersonSkinOverlayRendererMixin",
+    "FirstPersonOverlayArmRendererMixin",
+    "SkinOverlayModelRendererMixin",
+    "SkinModifierManagerMixin",
+    "PlayerAnimatorFirstPersonOverlayCompatMixin",
+    "PlayerAttachmentManagerMixin",
+    "SandevistanMirageTrailCpmMixin",
+    "ElectricArcCannonFirstPersonMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

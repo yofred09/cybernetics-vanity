@@ -1,0 +1,13 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "com.cyberneticsvanity.yofred.dev.mixin.compat",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "com.cyberneticsvanity.yofred.dev.mixin.compat.PehkuiMixinPlugin",
+  "client": [
+    "HoloprojectorPehkuiMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
