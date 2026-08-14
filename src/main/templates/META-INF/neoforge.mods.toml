@@ -104,3 +104,11 @@ config="${mod_id}-pehkui.mixins.json"
     ordering="AFTER"
     side="CLIENT"
     reason="Optional Pehkui scale compatibility for Holoprojector and Sandevistan player projections."
+
+[[dependencies.${mod_id}]]
+    modId="cpmvisualbridge"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="CLIENT"
+    reason="Preferred owner of migrated CPM projection and illusion renderer integrations."
