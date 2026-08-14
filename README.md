@@ -4,6 +4,15 @@ Cosmetic control and compatibility addon for [Cybernetics](https://www.curseforg
 
 Cybernetics: Vanity lets players decide which installed cyberware remains visible without uninstalling it or losing its effects. Install the Vanity Implant, assign the menu key, and control each visual implant from a synchronized Robosurgeon-inspired interface.
 
+## Download
+
+Official builds are distributed exclusively through:
+
+- [CurseForge](https://www.curseforge.com/minecraft/mc-mods/cybernetics-vanity)
+- [Modrinth](https://modrinth.com/mod/cybernetics-vanity)
+
+GitHub is used for source code, documentation, and issue tracking only. Compiled releases are not distributed here.
+
 ## Features
 
 - Hide or show each installed visual implant independently.
@@ -50,7 +59,7 @@ See the [wiki](https://github.com/yofred09/cybernetics-vanity/wiki) for configur
 ./gradlew build
 ```
 
-The compiled JAR is written to `build/libs/`. Java 21 is required.
+Local development builds are written to `build/libs/`. Java 21 is required. Do not redistribute development builds; official downloads are available only from CurseForge and Modrinth.
 
 ## Support
 
