@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.2 — Development
+
+### Changed
+
+- Updated compatibility and development runtime to Cybernetics 0.5.2 on NeoForge 1.21.1.
+
 ## 0.5.1 — Development
 
 ### Added

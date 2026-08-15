@@ -41,7 +41,7 @@ All optional integrations are soft dependencies: the addon continues to load whe
 
 - Minecraft 1.21.1
 - NeoForge 21.1.244 or newer
-- [Cybernetics](https://www.curseforge.com/minecraft/mc-mods/cybernetics) 0.5.1 or newer for the current development branch
+- [Cybernetics](https://www.curseforge.com/minecraft/mc-mods/cybernetics) 0.5.2 or newer for the current development branch
 
 ## Getting started
 
