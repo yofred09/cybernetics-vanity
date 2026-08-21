@@ -10,7 +10,7 @@
 
 ### Changed
 
-- Updated compatibility and development runtime to Cybernetics 0.5.2 on NeoForge 1.21.1.
+- Updated compatibility and development runtime to Cybernetics 0.5.2 HOTFIX on NeoForge 1.21.1.
 - Moved all CPM and Pehkui rendering responsibility to the optional CPM Visual Bridge addon.
 - Removed the old CPM, Pehkui, Sandevistan and CPM Corpse compatibility hooks from Vanity.
 
