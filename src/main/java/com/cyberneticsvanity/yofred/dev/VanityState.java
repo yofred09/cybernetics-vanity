@@ -355,8 +355,8 @@ public final class VanityState {
 
         ResourceLocation wide = modifier.getTexture(PlayerSkin.Model.WIDE);
         ResourceLocation slim = modifier.getTexture(PlayerSkin.Model.SLIM);
-        if ((InstalledVisualImplants.isSculkAppearance(wide)
-                || InstalledVisualImplants.isSculkAppearance(slim))
+        if ((CyberneticsIds.isSculkAppearance(wide)
+                || CyberneticsIds.isSculkAppearance(slim))
                 && isSculkHeartHidden(installed, snap)) {
             return true;
         }
@@ -376,7 +376,7 @@ public final class VanityState {
     ) {
         for (InstalledVisualImplants.Entry entry : installed) {
             ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(entry.stack().getItem());
-            if (InstalledVisualImplants.isSculkHeart(itemId) && snapshot.isHidden(entry.key())) {
+            if (CyberneticsIds.isSculkHeart(itemId) && snapshot.isHidden(entry.key())) {
                 return true;
             }
         }

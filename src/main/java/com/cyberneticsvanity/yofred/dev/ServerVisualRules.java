@@ -34,15 +34,24 @@ public final class ServerVisualRules {
         if (data == null) {
             return false;
         }
+        boolean foundMatchingItem = false;
         for (int index = 0; index < slot.size; index++) {
             InstalledCyberware installed = data.get(slot, index);
             ItemStack stack = installed == null ? ItemStack.EMPTY : installed.getItem();
-            ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(stack.getItem());
-            if (stack.isEmpty() || !itemMatcher.test(itemId)) {
+            if (stack.isEmpty()) {
                 continue;
             }
-            return snapshot.isHidden(VanityKeys.implantKey(slot, index, stack));
+            ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(stack.getItem());
+            if (!itemMatcher.test(itemId)) {
+                continue;
+            }
+
+            foundMatchingItem = true;
+            if (!snapshot.isHidden(VanityKeys.implantKey(slot, index, stack))) {
+                // A visible copy still needs the shared server-side visual effect.
+                return false;
+            }
         }
-        return false;
+        return foundMatchingItem;
     }
 }

@@ -1,6 +1,7 @@
 package com.cyberneticsvanity.yofred.dev.mixin;
 
 import com.cyberneticsvanity.yofred.dev.ServerVisualRules;
+import com.cyberneticsvanity.yofred.dev.CyberneticsIds;
 import com.perigrine3.createcybernetics.api.CyberwareSlot;
 import com.perigrine3.createcybernetics.item.cyberware.organs.HeatEngineItem;
 import net.minecraft.server.level.ServerPlayer;
@@ -9,7 +10,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** Hides only the Heat Engine's particles; energy generation remains untouched. */
+/**
+ * Cancels the Heat Engine's cosmetic server particles when Vanity hides it.
+ *
+ * <p>The injection targets the particle helper instead of {@code onTick}, so
+ * the implant continues generating energy and only its appearance changes.</p>
+ */
 @Mixin(HeatEngineItem.class)
 public abstract class HeatEngineParticlesMixin {
     @Inject(method = "spawnHeatEngineParticles", at = @At("HEAD"), cancellable = true)
@@ -17,8 +23,7 @@ public abstract class HeatEngineParticlesMixin {
         if (ServerVisualRules.isInstalledItemHidden(
                 player,
                 CyberwareSlot.ORGANS,
-                id -> id != null && id.getNamespace().equals("createcybernetics")
-                        && id.getPath().endsWith("heatengine")
+                CyberneticsIds::isHeatEngine
         )) {
             ci.cancel();
         }
