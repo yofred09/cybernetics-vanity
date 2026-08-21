@@ -13,7 +13,6 @@
   "gui.cyberneticsvanity.menu.empty": "Sem cyberware visual instalado",
   "gui.cyberneticsvanity.menu.hide_all": "Ocultar tudo",
   "gui.cyberneticsvanity.menu.show_all": "Mostrar tudo",
-  "gui.cyberneticsvanity.menu.cpm_note": "CPM: hide evita conflitos de membros",
   "gui.cyberneticsvanity.menu.done": "Concluir",
   "gui.cyberneticsvanity.meta.highlights": "Highlights emissivos",
   "gui.cyberneticsvanity.meta.limb_hiding": "Ignorar ocultação de membros",
@@ -38,11 +37,9 @@
   "cyberneticsvanity.configuration.maxDropChance": "Chance máxima de drop",
   "cyberneticsvanity.configuration.requireVanityImplant": "Exigir implante de vaidade",
   "cyberneticsvanity.configuration.allowedPermissionLevel": "Nível de permissão permitido",
-  "cyberneticsvanity.configuration.preserveCpmCorpseAppearance": "Preservar aparência CPM no cadáver",
-  "cyberneticsvanity.configuration.hideMissingLimbsWithCpm": "Ocultar membros ausentes com CPM",
+  "cyberneticsvanity.configuration.hideMissingLimbs": "Ocultar membros ausentes",
   "config.cyberneticsvanity.title": "Configurações do Cybernetics Vanity",
   "config.cyberneticsvanity.enabled": "Cyber Vanity ativado",
-  "config.cyberneticsvanity.sandevistan_cpm": "Modelos CPM no Sandevistan (adaptativo)",
   "config.cyberneticsvanity.server_section": "Configurações do servidor",
   "config.cyberneticsvanity.server_read_only": "As configurações do servidor só podem ser alteradas pelo host ou no ficheiro de configuração.",
   "config.cyberneticsvanity.villager_drop": "Drops de aldeões",
@@ -51,6 +48,5 @@
   "config.cyberneticsvanity.looting_bonus": "Bónus de Looting",
   "config.cyberneticsvanity.max_chance": "Chance máxima",
   "config.cyberneticsvanity.permission": "Nível de permissão",
-  "config.cyberneticsvanity.preserve_corpse": "Preservar skin no cadáver",
   "config.cyberneticsvanity.hide_limbs": "Ocultar membros ausentes"
 }

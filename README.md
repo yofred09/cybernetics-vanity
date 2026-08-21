@@ -23,16 +23,12 @@ GitHub is used for source code, documentation, and issue tracking only. Compiled
 - Vanity Implant implemented as a Synthskin replacement, including tattoo support.
 - Configurable villager drop, Looting bonus, implant requirement, and permission level.
 - Optional missing-limb rendering for Steve and Alex skins.
-- Optional preservation of player appearance on Corpse mod corpses.
 - English and Brazilian Portuguese translations.
 
 ## Compatibility
 
-- **[Customizable Player Models (CPM)](https://www.curseforge.com/minecraft/mc-mods/custom-player-models):** avoids duplicate skin passes and flickering on custom models.
-- **[Pehkui](https://www.curseforge.com/minecraft/mc-mods/pehkui):** preserves player scale in Holoprojector projections and Sandevistan mirages.
-- **Sandevistan + CPM:** mirages use the player's CPM model with adaptive render density to protect FPS; this can be disabled in the client settings.
+- **[CPM Visual Bridge](https://github.com/yofred09/cpm-visual-bridge):** optional companion for CPM rendering in Cybernetics projections and effects. Vanity no longer contains its own CPM/Pehkui renderer hooks.
 - **[Cyber Spells](https://www.curseforge.com/minecraft/mc-mods/cyber-spells):** vanity controls compatible rune overlays.
-- **[Corpse](https://www.curseforge.com/minecraft/mc-mods/corpse):** optional appearance-preservation rule.
 - **[Create](https://www.curseforge.com/minecraft/mc-mods/create):** optional. [Cybernetics](https://www.curseforge.com/minecraft/mc-mods/cybernetics) itself remains required.
 
 All optional integrations are soft dependencies: the addon continues to load when they are absent.
@@ -63,7 +59,7 @@ Local development builds are written to `build/libs/`. Java 21 is required. Do n
 
 ## Support
 
-Report reproducible problems through [GitHub Issues](https://github.com/yofred09/cybernetics-vanity/issues). Include the Minecraft, NeoForge, Cybernetics, CPM, and Pehkui versions involved, plus whether the problem occurs in first person, third person, or a projection.
+Report reproducible problems through [GitHub Issues](https://github.com/yofred09/cybernetics-vanity/issues). Include the Minecraft, NeoForge, and Cybernetics versions involved, plus the affected implant and whether the problem occurs in first or third person.
 
 Join the [official Discord community](https://discord.gg/R5VnN7Rn5H) for help, discussion, previews and development updates.
 

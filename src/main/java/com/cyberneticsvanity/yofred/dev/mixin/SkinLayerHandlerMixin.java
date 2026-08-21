@@ -1,7 +1,6 @@
 package com.cyberneticsvanity.yofred.dev.mixin;
 
 import com.cyberneticsvanity.yofred.dev.VanityState;
-import com.cyberneticsvanity.yofred.dev.compat.CpmCompat;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.perigrine3.createcybernetics.client.skin.SkinLayerHandler;
 import net.minecraft.client.player.AbstractClientPlayer;
@@ -30,8 +29,7 @@ public abstract class SkinLayerHandlerMixin {
         if (player == null) {
             return;
         }
-        if (VanityState.shouldSkipAllOverlays(player)
-                || CpmCompat.shouldSuppressCyberneticsSkinPasses(player)) {
+        if (VanityState.shouldSkipAllOverlays(player)) {
             ci.cancel();
         }
     }

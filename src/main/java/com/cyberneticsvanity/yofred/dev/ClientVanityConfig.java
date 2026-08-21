@@ -20,14 +20,6 @@ public final class ClientVanityConfig {
             )
             .define("cyberVanityEnabled", false);
 
-    public static final ModConfigSpec.BooleanValue SANDEVISTAN_CPM_MODELS = BUILDER
-            .comment(
-                    "Render CPM models in Sandevistan mirages.",
-                    "When enabled, mirage density is reduced automatically for long trails to protect FPS.",
-                    "When disabled, the vanilla player model is used while Pehkui scale is still preserved."
-            )
-            .define("sandevistanCpmModels", true);
-
     public static final ModConfigSpec.ConfigValue<List<? extends String>> HIDDEN_IMPLANTS = BUILDER
             .comment(
                     "Stable implant keys to hide while Cyber Vanity is enabled.",
@@ -39,10 +31,6 @@ public final class ClientVanityConfig {
     public static final ModConfigSpec SPEC = BUILDER.build();
 
     private ClientVanityConfig() {}
-
-    public static boolean sandevistanCpmModels() {
-        return SANDEVISTAN_CPM_MODELS.get();
-    }
 
     public static VanitySnapshot snapshot() {
         Set<String> hidden = new LinkedHashSet<>();

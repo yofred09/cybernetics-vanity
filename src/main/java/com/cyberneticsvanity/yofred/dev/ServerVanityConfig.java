@@ -48,19 +48,10 @@ public final class ServerVanityConfig {
             )
             .defineInRange("allowedPermissionLevel", 0, 0, 4);
 
-    public static final ModConfigSpec.BooleanValue PRESERVE_CORPSE_APPEARANCE = BUILDER
-            .comment(
-                    "Preserve the player's normal skin/model on Corpse mod corpses.",
-                    "When enabled, Create-Cybernetics corpse mutilation and skeleton overlays are suppressed.",
-                    "This server rule is synchronized so every modded client sees the same corpse appearance."
-            )
-            .define("preserveCorpseAppearance", false);
-
     public static final ModConfigSpec.BooleanValue HIDE_MISSING_LIMBS = BUILDER
             .comment(
                     "Visually remove missing arms and legs from player skins.",
-                    "Supports vanilla Steve/wide and Alex/slim skins and is synchronized for all modded clients.",
-                    "CPM models use their source skin/model mapping where CPM exposes it."
+                    "Supports vanilla Steve/wide and Alex/slim skins and is synchronized for all modded clients."
             )
             .define("hideMissingLimbs", false);
 
@@ -90,10 +81,6 @@ public final class ServerVanityConfig {
 
     public static int allowedPermissionLevel() {
         return ALLOWED_PERMISSION_LEVEL.get();
-    }
-
-    public static boolean preserveCorpseAppearance() {
-        return PRESERVE_CORPSE_APPEARANCE.get();
     }
 
     public static boolean hideMissingLimbs() {

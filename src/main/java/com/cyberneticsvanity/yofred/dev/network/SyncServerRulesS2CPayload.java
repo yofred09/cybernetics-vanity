@@ -13,7 +13,7 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
 
 /** Server → client: staff config flags that affect menu gating. */
 public record SyncServerRulesS2CPayload(boolean requireVanityImplant, int allowedPermissionLevel,
-                                        boolean preserveCorpseAppearance, boolean hideMissingLimbs)
+                                        boolean hideMissingLimbs)
         implements CustomPacketPayload {
     public static final Type<SyncServerRulesS2CPayload> TYPE = new Type<>(
             ResourceLocation.fromNamespaceAndPath(CyberneticsVanity.MODID, "sync_server_rules_s2c")
@@ -23,7 +23,6 @@ public record SyncServerRulesS2CPayload(boolean requireVanityImplant, int allowe
             StreamCodec.composite(
                     ByteBufCodecs.BOOL, SyncServerRulesS2CPayload::requireVanityImplant,
                     ByteBufCodecs.VAR_INT, SyncServerRulesS2CPayload::allowedPermissionLevel,
-                    ByteBufCodecs.BOOL, SyncServerRulesS2CPayload::preserveCorpseAppearance,
                     ByteBufCodecs.BOOL, SyncServerRulesS2CPayload::hideMissingLimbs,
                     SyncServerRulesS2CPayload::new
             );
@@ -37,7 +36,6 @@ public record SyncServerRulesS2CPayload(boolean requireVanityImplant, int allowe
         return new SyncServerRulesS2CPayload(
                 ServerVanityConfig.requireVanityImplant(),
                 ServerVanityConfig.allowedPermissionLevel(),
-                ServerVanityConfig.preserveCorpseAppearance(),
                 ServerVanityConfig.hideMissingLimbs()
         );
     }
@@ -47,7 +45,6 @@ public record SyncServerRulesS2CPayload(boolean requireVanityImplant, int allowe
             ClientSyncedServerRules.apply(
                     payload.requireVanityImplant(),
                     payload.allowedPermissionLevel(),
-                    payload.preserveCorpseAppearance(),
                     payload.hideMissingLimbs()
             );
             VanitySync.sendLocalToServer(ClientVanityConfig.snapshot());

@@ -2,9 +2,17 @@
 
 ## 0.5.2 — Development
 
+### Fixed
+
+- Hiding the Sculk Heart now also hides sculk appearance added later by its permanent effect.
+- Installing the Vanity Implant no longer makes the player's face or eyes appear blank.
+- Hiding the Heat Engine now suppresses its flame and smoke particles without disabling energy generation.
+
 ### Changed
 
 - Updated compatibility and development runtime to Cybernetics 0.5.2 on NeoForge 1.21.1.
+- Moved all CPM and Pehkui rendering responsibility to the optional CPM Visual Bridge addon.
+- Removed the old CPM, Pehkui, Sandevistan and CPM Corpse compatibility hooks from Vanity.
 
 ## 0.5.1 — Development
 

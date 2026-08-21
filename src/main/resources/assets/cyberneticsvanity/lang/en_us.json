@@ -13,7 +13,6 @@
   "gui.cyberneticsvanity.menu.empty": "No visual cyberware installed",
   "gui.cyberneticsvanity.menu.hide_all": "Hide all",
   "gui.cyberneticsvanity.menu.show_all": "Show all",
-  "gui.cyberneticsvanity.menu.cpm_note": "CPM: hide skips limb fights",
   "gui.cyberneticsvanity.menu.done": "Done",
   "gui.cyberneticsvanity.meta.highlights": "Emissive highlights",
   "gui.cyberneticsvanity.meta.limb_hiding": "Skip limb hiding",
@@ -38,11 +37,9 @@
   "cyberneticsvanity.configuration.maxDropChance": "Max Drop Chance",
   "cyberneticsvanity.configuration.requireVanityImplant": "Require Vanity Implant",
   "cyberneticsvanity.configuration.allowedPermissionLevel": "Allowed Permission Level",
-  "cyberneticsvanity.configuration.preserveCpmCorpseAppearance": "Preserve CPM Corpse Appearance",
-  "cyberneticsvanity.configuration.hideMissingLimbsWithCpm": "Hide Missing Limbs with CPM",
+  "cyberneticsvanity.configuration.hideMissingLimbs": "Hide Missing Limbs",
   "config.cyberneticsvanity.title": "Cybernetics Vanity Settings",
   "config.cyberneticsvanity.enabled": "Cyber Vanity Enabled",
-  "config.cyberneticsvanity.sandevistan_cpm": "CPM Sandevistan Models (Adaptive)",
   "config.cyberneticsvanity.server_section": "Server Settings",
   "config.cyberneticsvanity.server_read_only": "Server settings can only be changed by the host or in the server config file.",
   "config.cyberneticsvanity.villager_drop": "Villager Drops",
@@ -51,6 +48,5 @@
   "config.cyberneticsvanity.looting_bonus": "Looting Bonus",
   "config.cyberneticsvanity.max_chance": "Maximum Chance",
   "config.cyberneticsvanity.permission": "Permission Level",
-  "config.cyberneticsvanity.preserve_corpse": "Preserve Corpse Skin",
   "config.cyberneticsvanity.hide_limbs": "Hide Missing Limbs"
 }

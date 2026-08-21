@@ -13,7 +13,7 @@ credits="Original mod idea by OkarinY"
 description='''
 Cosmetic control and compatibility addon for Cybernetics. Install the Synthskin-based Vanity Implant,
 then hide or show each cyberware visual without losing its effects. Includes synchronized multiplayer
-settings and optional CPM, Pehkui, Corpse, and Cyber Spells compatibility.
+settings and optional Cyber Spells and CPM Visual Bridge integration.
 Community and support: https://discord.gg/R5VnN7Rn5H
 '''
 
@@ -22,12 +22,6 @@ config="${mod_id}.mixins.json"
 
 [[mixins]]
 config="${mod_id}-cyberspells.mixins.json"
-
-[[mixins]]
-config="${mod_id}-corpse.mixins.json"
-
-[[mixins]]
-config="${mod_id}-pehkui.mixins.json"
 
 [[dependencies.${mod_id}]]
     modId="neoforge"
@@ -68,22 +62,6 @@ config="${mod_id}-pehkui.mixins.json"
     reason="Optional Cybernetics addon; not required for vanity."
 
 [[dependencies.${mod_id}]]
-    modId="cpm"
-    type="optional"
-    versionRange="[0,)"
-    ordering="NONE"
-    side="CLIENT"
-    reason="Soft Custom Player Models compat (mod id cpm). Prevents limb-geometry conflicts and duplicate skin-overlay passes on custom models."
-
-[[dependencies.${mod_id}]]
-    modId="customplayermodels"
-    type="optional"
-    versionRange="[0,)"
-    ordering="NONE"
-    side="CLIENT"
-    reason="Legacy/alternate CPM mod id (customplayermodels). Optional soft compat only."
-
-[[dependencies.${mod_id}]]
     modId="cyberspells"
     type="optional"
     versionRange="[0,)"
@@ -92,25 +70,9 @@ config="${mod_id}-pehkui.mixins.json"
     reason="Soft Cyber Spells compat — hide rune limb overlays via optional mixins. Never required."
 
 [[dependencies.${mod_id}]]
-    modId="corpse"
-    type="optional"
-    versionRange="[0,)"
-    ordering="AFTER"
-    side="CLIENT"
-    reason="Optional CPM corpse appearance preservation."
-
-[[dependencies.${mod_id}]]
-    modId="pehkui"
-    type="optional"
-    versionRange="[3.8.3,)"
-    ordering="AFTER"
-    side="CLIENT"
-    reason="Optional Pehkui scale compatibility for Holoprojector and Sandevistan player projections."
-
-[[dependencies.${mod_id}]]
     modId="cpmvisualbridge"
     type="optional"
     versionRange="[0,)"
     ordering="AFTER"
     side="CLIENT"
-    reason="Preferred owner of migrated CPM projection and illusion renderer integrations."
+    reason="Optional companion that owns CPM rendering compatibility for Cybernetics and other mods."

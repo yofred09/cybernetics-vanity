@@ -8,17 +8,14 @@ package com.cyberneticsvanity.yofred.dev;
 public final class ClientSyncedServerRules {
     private static boolean requireVanityImplant = true;
     private static int allowedPermissionLevel = 0;
-    private static boolean preserveCorpseAppearance;
     private static boolean hideMissingLimbs;
     private static boolean received;
 
     private ClientSyncedServerRules() {}
 
-    public static void apply(boolean requireImplant, int permissionLevel,
-                             boolean preserveCorpse, boolean hideLimbs) {
+    public static void apply(boolean requireImplant, int permissionLevel, boolean hideLimbs) {
         requireVanityImplant = requireImplant;
         allowedPermissionLevel = Math.max(0, Math.min(4, permissionLevel));
-        preserveCorpseAppearance = preserveCorpse;
         hideMissingLimbs = hideLimbs;
         received = true;
     }
@@ -26,7 +23,6 @@ public final class ClientSyncedServerRules {
     public static void clear() {
         requireVanityImplant = true;
         allowedPermissionLevel = 0;
-        preserveCorpseAppearance = false;
         hideMissingLimbs = false;
         received = false;
     }
@@ -37,10 +33,6 @@ public final class ClientSyncedServerRules {
 
     public static int allowedPermissionLevel() {
         return allowedPermissionLevel;
-    }
-
-    public static boolean preserveCorpseAppearance() {
-        return preserveCorpseAppearance;
     }
 
     public static boolean hideMissingLimbs() {

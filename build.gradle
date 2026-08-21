@@ -166,14 +166,6 @@ dependencies {
     localRuntime("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
     localRuntime("com.tterrag.registrate:Registrate:${registrate_version}")
 
-    // Custom Player Models — runClient only (soft optional at publish time).
-    localRuntime "maven.modrinth:custom-player-models:${cpm_version}"
-
-    // Pehkui 1.21/1.21.1 NeoForge - optional runtime stack for scaled CPM projection testing.
-    // Never packaged and never required by Cybernetics Vanity users.
-    compileOnly "maven.modrinth:pehkui:3.8.3+1.21-neoforge"
-    localRuntime "maven.modrinth:pehkui:3.8.3+1.21-neoforge"
-
     // Cyber Spells — compileOnly for soft-compat research. Not on localRuntime by default
     // (requires Iron's Spells 'n Spellbooks). Optional mixins activate when the user installs it.
     def cyberspellsLocal = file("libs/cyberspells-1.21.1-1.3.1.jar")
@@ -190,13 +182,11 @@ dependencies {
     def curiosLocal = file("libs/curios-neoforge-9.5.1+1.21.1.jar")
     def geckolibLocal = file("libs/geckolib-neoforge-1.21.1-4.9.2.jar")
     def playerAnimatorLocal = file("libs/player-animation-lib-forge-2.0.4+1.21.1.jar")
-    def corpseLocal = file("libs/corpse-neoforge-1.21.1-1.1.13.jar")
     if (ironSpellsLocal.exists()) localRuntime files(ironSpellsLocal)
     if (ironsLibLocal.exists()) localRuntime files(ironsLibLocal)
     if (curiosLocal.exists()) localRuntime files(curiosLocal)
     if (geckolibLocal.exists()) localRuntime files(geckolibLocal)
     if (playerAnimatorLocal.exists()) localRuntime files(playerAnimatorLocal)
-    if (corpseLocal.exists()) localRuntime files(corpseLocal)
 
     // cyberchems is optional at runtime (declared in neoforge.mods.toml only) — not needed to compile vanity.
 }

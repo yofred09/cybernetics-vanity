@@ -2,9 +2,10 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.cyberneticsvanity.yofred.dev.mixin",
-  "plugin": "com.cyberneticsvanity.yofred.dev.mixin.VanityMixinPlugin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "HeatEngineParticlesMixin"
+  ],
   "client": [
     "SkinLayerHandlerMixin",
     "SkinHighlightLayerMixin",
@@ -15,7 +16,6 @@
     "SkinModifierManagerMixin",
     "PlayerAnimatorFirstPersonOverlayCompatMixin",
     "PlayerAttachmentManagerMixin",
-    "SandevistanMirageTrailCpmMixin",
     "ElectricArcCannonFirstPersonMixin"
   ],
   "injectors": {

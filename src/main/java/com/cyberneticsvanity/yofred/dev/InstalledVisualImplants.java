@@ -125,6 +125,20 @@ public final class InstalledVisualImplants {
                 || (path.contains("rune") && (path.contains("arm") || path.contains("leg")));
     }
 
+    public static boolean isSculkHeart(ResourceLocation itemId) {
+        return itemId != null
+                && itemId.getNamespace().equals("createcybernetics")
+                && itemId.getPath().equals("wetware_sculkheart");
+    }
+
+    public static boolean isSculkAppearance(ResourceLocation texture) {
+        if (texture == null || !texture.getNamespace().equals("createcybernetics")) {
+            return false;
+        }
+        String path = texture.getPath().toLowerCase(Locale.ROOT);
+        return path.contains("/sculk_") || path.endsWith("/sculked.png");
+    }
+
     /**
      * Specific visual stems for an item. Never emits bare {@code left}/{@code right}.
      */

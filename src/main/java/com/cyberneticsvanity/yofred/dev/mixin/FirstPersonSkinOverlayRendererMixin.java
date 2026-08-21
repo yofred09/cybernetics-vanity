@@ -1,7 +1,6 @@
 package com.cyberneticsvanity.yofred.dev.mixin;
 
 import com.cyberneticsvanity.yofred.dev.VanityState;
-import com.cyberneticsvanity.yofred.dev.compat.CpmCompat;
 import com.perigrine3.createcybernetics.client.skin.SkinLayerRender;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.neoforged.neoforge.client.event.RenderArmEvent;
@@ -21,10 +20,7 @@ public abstract class FirstPersonSkinOverlayRendererMixin {
         if (player == null) {
             return;
         }
-        // CPM: do not cancel vanilla FP arm rendering (limb geometry fight).
-        // Overlay hide still applies below via shouldHideArm when vanity HIDE is set.
-        if (CpmCompat.shouldSkipLimbGeometryEdits()
-                || VanityState.shouldSuppressFirstPersonArmAlteration(player)) {
+        if (VanityState.shouldSuppressFirstPersonArmAlteration(player)) {
             ci.cancel();
         }
     }
@@ -38,7 +34,7 @@ public abstract class FirstPersonSkinOverlayRendererMixin {
         if (player == null) {
             return;
         }
-        // Only cancel FP chrome when that arm's implant is vanity-hidden (SHOW still renders with CPM).
+        // Only cancel the chrome belonging to a vanity-hidden arm.
         if (VanityState.shouldHideArm(player, event.getArm())) {
             ci.cancel();
         }

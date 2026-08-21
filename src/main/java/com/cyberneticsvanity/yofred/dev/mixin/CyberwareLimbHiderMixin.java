@@ -2,7 +2,6 @@ package com.cyberneticsvanity.yofred.dev.mixin;
 
 import com.cyberneticsvanity.yofred.dev.VanityState;
 import com.cyberneticsvanity.yofred.dev.ClientSyncedServerRules;
-import com.cyberneticsvanity.yofred.dev.compat.CpmCompat;
 import com.perigrine3.createcybernetics.api.CyberwareSlot;
 import com.perigrine3.createcybernetics.client.render.CyberwareLimbHider;
 import net.minecraft.client.player.AbstractClientPlayer;
@@ -39,15 +38,8 @@ public abstract class CyberwareLimbHiderMixin {
     }
 
     @Inject(method = "onRenderLivingPre", at = @At("HEAD"), cancellable = true)
-    private static void cyberneticsvanity$skipWhenHiddenOrCpm(RenderLivingEvent.Pre event, CallbackInfo ci) {
+    private static void cyberneticsvanity$skipWhenHidden(RenderLivingEvent.Pre event, CallbackInfo ci) {
         if (event == null) {
-            return;
-        }
-        if (CpmCompat.shouldSkipLimbGeometryEdits()) {
-            LivingEntity entity = event.getEntity();
-            if (entity instanceof Player) {
-                ci.cancel();
-            }
             return;
         }
         LivingEntity entity = event.getEntity();

@@ -1,7 +1,7 @@
 package com.cyberneticsvanity.yofred.dev;
 
-import com.cyberneticsvanity.yofred.dev.compat.CpmCompat;
 import com.cyberneticsvanity.yofred.dev.compat.CyberSpellsCompat;
+import com.cyberneticsvanity.yofred.dev.compat.VisualBridgeCompat;
 import com.cyberneticsvanity.yofred.dev.item.ModItems;
 import com.cyberneticsvanity.yofred.dev.network.VanityNetwork;
 import com.mojang.logging.LogUtils;
@@ -31,8 +31,8 @@ public class CyberneticsVanity {
 
     private void commonSetup(FMLCommonSetupEvent event) {
         LOGGER.info(
-                "Cybernetics Vanity loaded (server config + implant-gated synced vanity; CPM={} CyberSpells={})",
-                CpmCompat.isLoaded(),
+                "Cybernetics Vanity loaded (Visual Bridge={} CyberSpells={})",
+                VisualBridgeCompat.isLoaded(),
                 CyberSpellsCompat.isLoaded()
         );
     }

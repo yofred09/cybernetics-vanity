@@ -4,7 +4,6 @@ import com.cyberneticsvanity.yofred.dev.ClientVanityConfig;
 import com.cyberneticsvanity.yofred.dev.InstalledVisualImplants;
 import com.cyberneticsvanity.yofred.dev.VanityKeys;
 import com.cyberneticsvanity.yofred.dev.VanityState;
-import com.cyberneticsvanity.yofred.dev.compat.CpmCompat;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
@@ -89,7 +88,6 @@ public class VanityConfigScreen extends Screen {
     private double lastDragX;
     private int doneX;
     private int doneY;
-    private int footerNoteY;
 
     public VanityConfigScreen(Screen parent) {
         super(Component.translatable("gui.cyberneticsvanity.menu.title"));
@@ -175,7 +173,6 @@ public class VanityConfigScreen extends Screen {
         scroll = Mth.clamp(scroll, 0, maxScroll);
         relayoutRows();
 
-        footerNoteY = panelY + PANEL_H - 26;
         doneX = panelX + PANEL_W - DONE_W - 12;
         doneY = panelY + PANEL_H - DONE_H - 12;
         addRenderableWidget(new DoneButton(doneX, doneY, DONE_W, DONE_H));
@@ -284,13 +281,6 @@ public class VanityConfigScreen extends Screen {
         );
 
         renderPlayerPreview(graphics, mouseX, mouseY);
-
-        if (CpmCompat.isLoaded()) {
-            Component note = Component.translatable("gui.cyberneticsvanity.menu.cpm_note");
-            int maxNoteW = doneX - listLeft - 8;
-            String clipped = ellipsize(this.font, note.getString(), Math.max(40, maxNoteW));
-            graphics.drawString(this.font, clipped, listLeft, footerNoteY, 0x889999, false);
-        }
 
         graphics.enableScissor(listLeft - 1, listTop - 1, listRight + 1, listBottom + 1);
         for (Row row : rows) {

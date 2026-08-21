@@ -1,6 +1,5 @@
 package com.cyberneticsvanity.yofred.dev;
 
-import com.cyberneticsvanity.yofred.dev.compat.CpmCompat;
 import com.cyberneticsvanity.yofred.dev.network.VanitySync;
 import com.perigrine3.createcybernetics.api.CyberwareSlot;
 import com.perigrine3.createcybernetics.client.model.AttachmentAnchor;
@@ -179,15 +178,8 @@ public final class VanityState {
         return shouldHideHighlights(mc.player);
     }
 
-    /**
-     * Skip CyberwareLimbHider model mutation when CPM is loaded, or when the player
-     * explicitly enables the limb-hiding meta skip.
-     * Overlay-only upgrades (Firestarter) must NOT cancel the entire limb hider.
-     */
+    /** Skip Cyberware limb mutation only when explicitly requested by Vanity. */
     public static boolean shouldSkipLimbHiding(Player player) {
-        if (CpmCompat.shouldSkipLimbGeometryEdits()) {
-            return true;
-        }
         if (!isVanityActive(player)) {
             return false;
         }
@@ -363,11 +355,29 @@ public final class VanityState {
 
         ResourceLocation wide = modifier.getTexture(PlayerSkin.Model.WIDE);
         ResourceLocation slim = modifier.getTexture(PlayerSkin.Model.SLIM);
+        if ((InstalledVisualImplants.isSculkAppearance(wide)
+                || InstalledVisualImplants.isSculkAppearance(slim))
+                && isSculkHeartHidden(installed, snap)) {
+            return true;
+        }
         if (isCybereyeTexture(wide) || isCybereyeTexture(slim)) {
             for (InstalledVisualImplants.Entry entry : installed) {
                 if (entry.slot() == CyberwareSlot.EYES && snap.hiddenKeys().contains(entry.key())) {
                     return true;
                 }
+            }
+        }
+        return false;
+    }
+
+    private static boolean isSculkHeartHidden(
+            List<InstalledVisualImplants.Entry> installed,
+            VanitySnapshot snapshot
+    ) {
+        for (InstalledVisualImplants.Entry entry : installed) {
+            ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(entry.stack().getItem());
+            if (InstalledVisualImplants.isSculkHeart(itemId) && snapshot.isHidden(entry.key())) {
+                return true;
             }
         }
         return false;

@@ -40,12 +40,6 @@ public final class ModSettingsScreen extends Screen {
                         (button, value) -> applyClientEnabled(value)));
         y += 30;
 
-        addRenderableWidget(CycleButton.onOffBuilder(ClientVanityConfig.sandevistanCpmModels())
-                .create(x, y, WIDTH, 20,
-                        Component.translatable("config.cyberneticsvanity.sandevistan_cpm"),
-                        (button, value) -> ClientVanityConfig.SANDEVISTAN_CPM_MODELS.set(value)));
-        y += 30;
-
         if (canEditServer) {
             addRenderableWidget(CycleButton.onOffBuilder(ServerVanityConfig.enableVillagerDrop())
                     .create(x, y, half, 20, Component.translatable("config.cyberneticsvanity.villager_drop"),
@@ -69,11 +63,8 @@ public final class ModSettingsScreen extends Screen {
             addRenderableWidget(new PermissionSlider(x + half + 6, y, half));
             y += 24;
 
-            addRenderableWidget(CycleButton.onOffBuilder(ServerVanityConfig.preserveCorpseAppearance())
-                    .create(x, y, half, 20, Component.translatable("config.cyberneticsvanity.preserve_corpse"),
-                            (button, value) -> ServerVanityConfig.PRESERVE_CORPSE_APPEARANCE.set(value)));
             addRenderableWidget(CycleButton.onOffBuilder(ServerVanityConfig.hideMissingLimbs())
-                    .create(x + half + 6, y, half, 20, Component.translatable("config.cyberneticsvanity.hide_limbs"),
+                    .create(x, y, WIDTH, 20, Component.translatable("config.cyberneticsvanity.hide_limbs"),
                             (button, value) -> ServerVanityConfig.HIDE_MISSING_LIMBS.set(value)));
             y += 32;
         } else {
