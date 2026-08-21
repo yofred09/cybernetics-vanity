@@ -10,14 +10,10 @@
 
 Confirm that the same Vanity version is installed on the server and both clients. Reconnect after changing the server mod list.
 
-## Sandevistan lowers FPS
+## CPM models, Sandevistan, or Holoprojector problems
 
-Open the mod settings and disable **CPM Sandevistan Models (Adaptive)**. Pehkui scaling remains enabled and the trail falls back to the vanilla model.
-
-## CPM parts flicker
-
-Confirm that Cybernetics, CPM, and Vanity match the supported Minecraft version. If the problem is limited to one CPM profile, report it with the profile type, relevant mod versions, and a short recording.
+These renderers are handled by [CPM Visual Bridge](https://github.com/yofred09/cpm-visual-bridge), not Vanity. Confirm that CPM Visual Bridge supports the target mod and report rendering issues in its repository with the CPM profile type, exact mod versions, and a short recording.
 
 ## Reporting a bug
 
-Include `latest.log`, the exact mod versions, reproduction steps, and whether the issue appears in first person, third person, Holoprojector, Sandevistan, or Corpse rendering. Remove access tokens, server addresses, and other private information before attaching logs.
+Include `latest.log`, the exact mod versions, reproduction steps, the affected implant, and whether the issue appears in first or third person. Remove access tokens, server addresses, and other private information before attaching logs.

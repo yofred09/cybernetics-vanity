@@ -20,17 +20,15 @@ Estas são as únicas plataformas oficiais de download. O GitHub contém o códi
 - Sincronização multiplayer persistente
 - Vanity Implant baseado em Synthskin, incluindo tatuagens
 - Aquisição, permissões e requisito do implante configuráveis
-- Regras opcionais para membros ausentes e aparência do mod Corpse
+- Renderização opcional de membros ausentes
 
 ## Compatibilidade
 
-- **[Customizable Player Models (CPM)](https://www.curseforge.com/minecraft/mc-mods/custom-player-models):** evita passes duplicados e partes a piscar; suporta modelos CPM no rasto do Sandevistan
-- **[Pehkui](https://www.curseforge.com/minecraft/mc-mods/pehkui):** preserva a escala no Sandevistan e nas projeções do Holoprojector
+- **[CPM Visual Bridge](https://github.com/yofred09/cpm-visual-bridge):** addon opcional para modelos CPM, escala Pehkui, rastos do Sandevistan, projeções do Holoprojector e renderizadores externos. O lançamento público ainda está em desenvolvimento.
 - **[Cyber Spells](https://www.curseforge.com/minecraft/mc-mods/cyber-spells):** controla overlays compatíveis de runas
-- **[Corpse](https://www.curseforge.com/minecraft/mc-mods/corpse):** preservação opcional da aparência dos cadáveres
-- **[Create](https://www.curseforge.com/minecraft/mc-mods/create), [Cyberchems](https://www.curseforge.com/minecraft/mc-mods/cybernetics-cyberchems), CPM, Pehkui, Cyber Spells e Corpse são opcionais**
+- **[Create](https://www.curseforge.com/minecraft/mc-mods/create), [Cyberchems](https://www.curseforge.com/minecraft/mc-mods/cybernetics-cyberchems), Cyber Spells e CPM Visual Bridge são opcionais**
 
-O Sandevistan adapta automaticamente a quantidade de cópias CPM completas para proteger o FPS. Esta função também pode ser totalmente desativada na configuração do cliente sem perder a escala Pehkui.
+Cybernetics: Vanity já não contém integrações de CPM, Pehkui, projeções do Sandevistan, escala do Holoprojector ou renderização do Corpse. Estas responsabilidades foram movidas para o CPM Visual Bridge para que cada addon tenha um objetivo claro.
 
 ## Requisitos
 

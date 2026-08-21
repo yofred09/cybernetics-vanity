@@ -20,17 +20,15 @@ These are the only official download platforms. GitHub contains source code and 
 - Persistent multiplayer synchronization
 - Synthskin-based Vanity Implant with tattoo support
 - Configurable acquisition, permissions, and implant requirement
-- Optional missing-limb and Corpse appearance rules
+- Optional missing-limb rendering
 
 ## Compatibility
 
-- **[Customizable Player Models (CPM)](https://www.curseforge.com/minecraft/mc-mods/custom-player-models):** prevents duplicate model passes and flickering; supports CPM Sandevistan mirages
-- **[Pehkui](https://www.curseforge.com/minecraft/mc-mods/pehkui):** preserves scale in Sandevistan and Holoprojector projections
+- **[CPM Visual Bridge](https://github.com/yofred09/cpm-visual-bridge):** optional companion for CPM models, Pehkui scaling, Sandevistan mirages, Holoprojector projections, and external player renderers. Its public release is still in development.
 - **[Cyber Spells](https://www.curseforge.com/minecraft/mc-mods/cyber-spells):** compatible rune overlay visibility
-- **[Corpse](https://www.curseforge.com/minecraft/mc-mods/corpse):** optional preserved corpse appearance
-- **[Create](https://www.curseforge.com/minecraft/mc-mods/create), [Cyberchems](https://www.curseforge.com/minecraft/mc-mods/cybernetics-cyberchems), CPM, Pehkui, Cyber Spells, and Corpse are optional**
+- **[Create](https://www.curseforge.com/minecraft/mc-mods/create), [Cyberchems](https://www.curseforge.com/minecraft/mc-mods/cybernetics-cyberchems), Cyber Spells, and CPM Visual Bridge are optional**
 
-CPM Sandevistan rendering adapts the number of full model copies for better performance and can be disabled completely in the client settings. Pehkui scale remains active when it is disabled.
+Cybernetics: Vanity no longer contains CPM, Pehkui, Sandevistan projection, Holoprojector scaling, or Corpse rendering hooks. These responsibilities were moved to CPM Visual Bridge so each addon has one clear purpose.
 
 ## Requirements
 
