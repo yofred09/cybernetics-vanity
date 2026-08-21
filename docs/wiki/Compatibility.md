@@ -1,18 +1,12 @@
 # Compatibility
 
-## Custom Player Models
+## CPM Visual Bridge
 
-Cybernetics can render the vanilla player model repeatedly for skin modifiers. CPM may also intercept those calls, producing duplicate custom cubes and visible flicker. Vanity suppresses the conflicting duplicate skin passes for custom CPM profiles while preserving compatible 3D attachments.
+Cybernetics: Vanity controls whether installed cyberware visuals are shown. It no longer modifies CPM models, Pehkui scale, Sandevistan mirages, Holoprojector projections, or Corpse renderers.
 
-Sandevistan mirages can render the CPM player model. Long trails use adaptive density to reduce the number of expensive full-model copies.
+Those external player-rendering integrations belong to the separate [CPM Visual Bridge](https://github.com/yofred09/cpm-visual-bridge), a client-side addon designed to display CPM models inside renderers from Cybernetics, Relics, Mowzie's Mobs, and other mods. Its public release is still in development.
 
-## Pehkui
-
-Player width and height scaling are preserved in Holoprojector projections and Sandevistan mirages, including when CPM is also installed.
-
-## Corpse
-
-The optional `preserveCorpseAppearance` server rule prevents Cybernetics mutilation and skeleton overlays from replacing the saved corpse appearance.
+CPM and Pehkui are therefore not direct Vanity integrations or dependencies.
 
 ## Cyber Spells
 
