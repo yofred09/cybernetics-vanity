@@ -35,7 +35,8 @@ public abstract class SkinModifierManagerMixin {
 
         List<SkinModifier> kept = new ArrayList<>();
         for (SkinModifier modifier : state.getModifiers()) {
-            if (!VanityState.shouldHideModifier(player, modifier)) {
+            if (!VanityState.shouldHideModifier(player, modifier)
+                    && !isMetalPlatingSuppressedByVanity(modifier)) {
                 kept.add(withVanitySkinUnderlay(modifier));
             }
         }
@@ -47,6 +48,19 @@ public abstract class SkinModifierManagerMixin {
         if (VanityState.shouldHideHighlights(player)) {
             state.clearHighlights();
         }
+    }
+
+    /**
+     * Cybernetics omits this base layer when its exact Synthskin item is installed.
+     * Vanity is Synthskin-compatible, but that upstream check compares item identity,
+     * so reproduce the intended result here without suppressing Netherite Plating.
+     */
+    private static boolean isMetalPlatingSuppressedByVanity(SkinModifier modifier) {
+        if (modifier == null) {
+            return false;
+        }
+        return CyberneticsIds.isBaseMetalPlatingTexture(modifier.getTexture(PlayerSkin.Model.WIDE))
+                || CyberneticsIds.isBaseMetalPlatingTexture(modifier.getTexture(PlayerSkin.Model.SLIM));
     }
 
     /**

@@ -42,6 +42,17 @@ public final class CyberneticsIds {
                 || path.endsWith("/isothermal_skin_slim.png");
     }
 
+    public static boolean isBaseMetalPlatingTexture(ResourceLocation textureId) {
+        if (!isFromCybernetics(textureId)) {
+            return false;
+        }
+        String path = textureId.getPath();
+        return path.endsWith("/metal_plating_wide.png")
+                || path.endsWith("/metal_plating_slim.png")
+                || path.endsWith("/metal_plating_wide_dyed.png")
+                || path.endsWith("/metal_plating_slim_dyed.png");
+    }
+
     private static boolean hasPath(ResourceLocation id, String expectedPath) {
         return isFromCybernetics(id) && id.getPath().equals(expectedPath);
     }

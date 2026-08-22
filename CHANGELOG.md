@@ -7,6 +7,7 @@
 - Hiding the Sculk Heart now also hides sculk appearance added later by its permanent effect.
 - Installing the Vanity Implant no longer makes the player's face or eyes appear blank.
 - Fixed transparent eye pixels when the Vanity Implant is combined with Netherite Plating.
+- Metal Plating no longer adds the base body layer that Cybernetics normally suppresses for Synthskin.
 - Hiding the Heat Engine now suppresses its flame and smoke particles without disabling energy generation.
 
 ### Changed
