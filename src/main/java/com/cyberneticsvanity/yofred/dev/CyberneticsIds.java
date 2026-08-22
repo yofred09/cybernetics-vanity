@@ -33,6 +33,15 @@ public final class CyberneticsIds {
         return path.contains("/sculk_") || path.endsWith("/sculked.png");
     }
 
+    public static boolean isNetheriteSkinTexture(ResourceLocation textureId) {
+        if (!isFromCybernetics(textureId)) {
+            return false;
+        }
+        String path = textureId.getPath();
+        return path.endsWith("/isothermal_skin_wide.png")
+                || path.endsWith("/isothermal_skin_slim.png");
+    }
+
     private static boolean hasPath(ResourceLocation id, String expectedPath) {
         return isFromCybernetics(id) && id.getPath().equals(expectedPath);
     }
