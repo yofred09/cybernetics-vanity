@@ -1,6 +1,7 @@
 package com.cyberneticsvanity.yofred.dev.network;
 
 import com.cyberneticsvanity.yofred.dev.ClientSyncedServerRules;
+import com.cyberneticsvanity.yofred.dev.ServerVanityGate;
 import com.cyberneticsvanity.yofred.dev.VanitySnapshot;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -77,11 +78,23 @@ public final class VanitySync {
     }
 
     public static void sendTo(ServerPlayer target, Player subject) {
-        VanitySnapshot snap = read(subject);
+        VanitySnapshot snap = effectiveSnapshot(subject);
         PacketDistributor.sendToPlayer(target, SyncVanityS2CPayload.from(subject.getUUID(), snap));
     }
 
     public static void broadcastExisting(ServerPlayer player) {
-        storeAndBroadcast(player, read(player));
+        VanitySnapshot snap = effectiveSnapshot(player);
+        PacketDistributor.sendToPlayersTrackingEntityAndSelf(
+                player,
+                SyncVanityS2CPayload.from(player.getUUID(), snap)
+        );
+    }
+
+    /**
+     * Keep saved preferences intact, but never expose them as active while the
+     * player fails the server's current implant or permission requirements.
+     */
+    private static VanitySnapshot effectiveSnapshot(Player player) {
+        return ServerVanityGate.canUse(player) ? read(player) : VanitySnapshot.DISABLED;
     }
 }

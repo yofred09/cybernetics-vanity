@@ -85,7 +85,13 @@ public final class VanityState {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player != null && player.getUUID().equals(mc.player.getUUID())) {
             if (ClientSyncedServerRules.isClientOnlyMode()) {
-                return true;
+                // With no server handshake there are no server-side rules, but the
+                // implant is still the local feature gate (same rule used by the UI).
+                return hasImplant(player);
+            }
+            int need = ClientSyncedServerRules.allowedPermissionLevel();
+            if (need > 0 && !player.hasPermissions(need)) {
+                return false;
             }
             if (!ClientSyncedServerRules.requireVanityImplant()) {
                 return true;

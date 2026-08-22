@@ -3,6 +3,7 @@ package com.cyberneticsvanity.yofred.dev.network;
 import com.cyberneticsvanity.yofred.dev.ClientSyncedServerRules;
 import com.cyberneticsvanity.yofred.dev.ClientVanityConfig;
 import com.cyberneticsvanity.yofred.dev.CyberneticsVanity;
+import com.perigrine3.createcybernetics.event.custom.CyberwareSurgeryEvent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
@@ -54,6 +55,16 @@ public final class VanitySyncEvents {
             }
             VanitySync.write(neu, VanitySync.read(original));
             VanitySync.broadcastExisting(neu);
+        }
+
+        @SubscribeEvent
+        public static void onCyberwareChanged(CyberwareSurgeryEvent event) {
+            ServerPlayer player = event.getPlayer();
+            if (player != null) {
+                // Installing or removing Vanity changes the permission gate. Push the
+                // effective state immediately so tracking clients cannot retain stale hides.
+                VanitySync.broadcastExisting(player);
+            }
         }
     }
 
