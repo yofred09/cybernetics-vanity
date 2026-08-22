@@ -11,6 +11,7 @@
 - Vanity visuals no longer activate client-side without the implant on servers that do not run the addon.
 - Saved vanity settings are no longer shown to other players while their owner fails the server's implant or permission requirements.
 - Installing or removing cyberware now refreshes the effective vanity state for nearby players immediately.
+- Fixed toggles for legacy broad-mask visuals and mismatched texture names, including Heavy Knuckles, Calf Propellers, Heat Engine furnace layers, Reinforced Knuckles, Gills, Chipware Slots, and Netherite Plating.
 - Hiding the Heat Engine now suppresses its flame and smoke particles without disabling energy generation.
 
 ### Changed

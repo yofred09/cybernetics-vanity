@@ -74,13 +74,20 @@ public final class InstalledVisualImplants {
         if (modifier == null || entry == null) {
             return false;
         }
-        if (!modifierFitsSlot(modifier, entry.slot())) {
-            return false;
-        }
         ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(entry.stack().getItem());
         ResourceLocation wide = modifier.getTexture(PlayerSkin.Model.WIDE);
         ResourceLocation slim = modifier.getTexture(PlayerSkin.Model.SLIM);
-        return textureMatchesItem(wide, itemId) || textureMatchesItem(slim, itemId);
+        boolean textureMatches = textureMatchesItem(wide, itemId) || textureMatchesItem(slim, itemId);
+        if (!textureMatches) {
+            return false;
+        }
+
+        // Some Cybernetics modifiers created through legacy constructors claim every
+        // overlay part, even though their texture is clearly one limb. In that case
+        // the strict texture family is a safer slot discriminator than the mask.
+        return modifierFitsSlot(modifier, entry.slot())
+                || textureExplicitlyFitsSlot(wide, entry.slot())
+                || textureExplicitlyFitsSlot(slim, entry.slot());
     }
 
     /** Overlay-part region must belong to the implant's cyberware slot. */
@@ -184,6 +191,21 @@ public final class InstalledVisualImplants {
             tokens.add("craft_hands");
             tokens.add("knuckles");
         }
+        if (path.contains("reinforcedknuckles")) {
+            tokens.add("knuckles");
+        }
+        if (path.contains("heatengine")) {
+            tokens.add("furnace");
+        }
+        if (path.contains("propellers")) {
+            tokens.add("calf_propeller");
+        }
+        if (path.contains("waterbreathinglungs")) {
+            tokens.add("gills");
+        }
+        if (path.contains("chipwareslots")) {
+            tokens.add("chipware");
+        }
         if (path.contains("cybereye")) {
             tokens.add("cybereye");
             tokens.add("cybereyes");
@@ -198,6 +220,9 @@ public final class InstalledVisualImplants {
         if (path.contains("netherplated") || path.contains("nether_plated")) {
             tokens.add("netherplated");
             tokens.add("nether_plated");
+        }
+        if (path.contains("netheriteplating") || path.contains("netherite_plating")) {
+            tokens.add("isothermal_skin");
         }
         if (path.contains("dragonskin")) {
             tokens.add("dragonskin");
@@ -320,6 +345,21 @@ public final class InstalledVisualImplants {
         };
     }
 
+    private static boolean textureExplicitlyFitsSlot(ResourceLocation texture, CyberwareSlot slot) {
+        if (texture == null || slot == null) {
+            return false;
+        }
+        LimbFamily family = limbFamilyFromPath(texture.getPath());
+        return switch (slot) {
+            case LARM -> family == LimbFamily.LEFT_ARM;
+            case RARM -> family == LimbFamily.RIGHT_ARM;
+            case LLEG -> family == LimbFamily.LEFT_LEG;
+            case RLEG -> family == LimbFamily.RIGHT_LEG;
+            case EYES, BRAIN -> family == LimbFamily.HEAD;
+            case SKIN, MUSCLE, BONE, HEART, LUNGS, ORGANS -> family == LimbFamily.BODY;
+        };
+    }
+
     /**
      * Detect limb family from item or texture paths.
      * Prefer longer / more specific markers (leftarm before left, cyberarm with side, etc.).
@@ -334,6 +374,7 @@ public final class InstalledVisualImplants {
         if (p.contains("left_cyberarm") || p.contains("leftarm") || p.contains("left_arm")
                 || p.contains("firestarter_larm") || p.contains("flywheel_larm")
                 || p.contains("knuckles_larm") || p.contains("armcannon_larm")
+                || p.contains("knuckles_left")
                 || p.contains("arc_cannon_left") || p.contains("arccannon_left")
                 || p.contains("sculk_leftarm") || p.contains("sculkleftarm")) {
             return LimbFamily.LEFT_ARM;
@@ -341,6 +382,7 @@ public final class InstalledVisualImplants {
         if (p.contains("right_cyberarm") || p.contains("rightarm") || p.contains("right_arm")
                 || p.contains("firestarter_rarm") || p.contains("flywheel_rarm")
                 || p.contains("knuckles_rarm") || p.contains("armcannon_rarm")
+                || p.contains("knuckles_right")
                 || p.contains("arc_cannon_right") || p.contains("arccannon_right")
                 || p.contains("sculk_rightarm") || p.contains("sculkrightarm")) {
             return LimbFamily.RIGHT_ARM;
