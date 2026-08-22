@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.2 HOTFIX 2.0
+
+- Fixed Vanity compatibility with Netherite Plating and the player's eyes.
+- Fixed visual toggles for Heat Engine, Heavy Knuckles, Reinforced Knuckles, Calf Propellers, Gills, Chipware Slots, and legacy broad-mask implant visuals.
+- Fixed Metal Plating behavior when Vanity replaces Synthskin.
+- Fixed multiplayer permission, implant removal, surgery, login, and tracking synchronization.
+- Confirmed dedicated-server and NeoForge client startup with Cybernetics 0.5.2 HOTFIX.
+
 ## 0.5.2 — Development
 
 ### Fixed

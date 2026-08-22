@@ -53,7 +53,7 @@ base {
 }
 
 tasks.named('jar', Jar).configure {
-    archiveFileName = "${mod_id}-${mod_version}b-neoforge-${minecraft_version}.jar"
+    archiveFileName = "${mod_id}-0.5.2 HOTFIX 2.0 -neoforge-${minecraft_version}.jar"
 }
 
 // Mojang ships Java 21 to end users in 1.21.1, so mods should target Java 21.
